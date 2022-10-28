@@ -1,20 +1,20 @@
-Library Application and DB
-CRUD:
-Create:
+# Library Application and DB
+
+## CRUD:
+### Create:
 • make new records in the db, so "Title" and "Author"
 
-Read:
+### Read:
 • View books within db.
 • Will show whether book is available to be checked out.
 
-Update:
+### Update:
 • Update a book's availability
 
-Delete:
+### Delete:
 • Remove a book from db
 
--------------------------------------
-App must: 
+## Reqs: 
 • Make it easy to add new books
 • Make it easy to search for books
 • Make it easy to check availability

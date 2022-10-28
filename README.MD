@@ -1,5 +1,7 @@
 # Library Application and DB
 
+# Brief
+
 ## CRUD:
 ### Create:
 • make new records in the db, so "Title" and "Author"

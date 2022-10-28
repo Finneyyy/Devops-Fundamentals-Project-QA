@@ -1,6 +1,6 @@
 # =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-#   Library Application and DB
-#           Eoin Finney           
+   Library Application and DB
+          Eoin Finney           
 # =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
 CRUD:

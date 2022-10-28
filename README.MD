@@ -1,8 +1,4 @@
- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-#   Library Application and DB
- #         Eoin Finney           
- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-
+Library Application and DB
 CRUD:
 Create:
 • make new records in the db, so "Title" and "Author"

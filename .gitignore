@@ -130,3 +130,6 @@ dmypy.json
 
 # sqlite db files
 *.db
+
+# other files
+randomkeys.txt

@@ -1,26 +1,6 @@
-# Library Application and DB
-
-# Brief
-
-## CRUD:
-### Create:
-• make new records in the db, so "Title" and "Author"
-
-### Read:
-• View books within db.
-• Will show whether book is available to be checked out.
-
-### Update:
-• Update a book's availability
-
-### Delete:
-• Remove a book from db
-
-## Reqs: 
-• Make it easy to add new books
-• Make it easy to search for books
-• Make it easy to check availability
-
+# QA-Devops-Fundamental-Project - Library App
+• This repo contains my work for the QA DevOps Fundamental Project <br>
+• The brief for this project was to produce a Flask web application which has CRUD functionality. Additional requirements include a MySQL db with at least a one-to-many relationship between two tables, use 
 
 
 

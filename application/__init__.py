@@ -11,3 +11,6 @@ app.config['SECRET_KEY']=os.environ["secret_key"] # CSRF protection
 db=SQLAlchemy(app)
 
 # additional functionality under here
+from application import routes
+from application import models
+from application import forms

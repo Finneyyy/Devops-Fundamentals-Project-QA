@@ -11,10 +11,10 @@ def home():
 def add_book():
     return render_template('add_book.html')
 
-@app.route('/view_books')
-def view_books():
-    return render_template('/view_book.html')
+@app.route('/update_book')
+def update_book():
+    return render_template('/update_book.html')
 
-@app.route('/delete_books')
-def delete_books():
+@app.route('/delete_book')
+def delete_book():
     return render_template('/delete_book.html')

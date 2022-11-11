@@ -17,17 +17,18 @@ def add_book():
         book=Books(book_title=name)
         db.session.add(book)
         db.session.commit()
+        return redirect(url_for('book_added'))
     return render_template('add_book.html', form=form)
 
-@app.route('/add_author')
-def add_author():
-    #return redirect()
-    form=AddAuthor()
-    if request=="POST":
-        first_name=form.first_name.data
-        last_name=form.last_name.data
-        
-    return render_template('add_author.html')
+@app.route('/book_added', methods=['GET'])
+def book_added():
+    return render_template('book_added.html')
+
+@app.route('/view_books', methods=[])
+def view_books():
+    all_books=Books.query.all()
+    
+    return render_template('view_books.html')
 
 @app.route('/update_book')
 def update_book():
@@ -36,3 +37,23 @@ def update_book():
 @app.route('/delete_book')
 def delete_book():
     return render_template('/delete_book.html')
+
+
+
+# ------------------------------------------------------------------ #
+#                          Author Section                            #
+# ------------------------------------------------------------------ #
+
+
+@app.route('/add_author', methods=['GET', 'POST'])
+def add_author():
+    #return redirect()
+    form=AddAuthor()
+    if request=="POST":
+        first_name=form.first_name.data
+        last_name=form.last_name.data
+        author=AddAuthor(first_name, last_name)
+        db.session.add(author)
+        db.session.commit()
+    return render_template('add_author.html', form=form)
+

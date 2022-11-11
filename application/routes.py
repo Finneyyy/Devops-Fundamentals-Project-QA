@@ -1,7 +1,7 @@
 from flask import render_template, request, redirect, url_for
 from application import app, db
-from application.models import Books, Authors
-from application.forms import AddBook, AddAuthor
+from application.models import Book, Author
+from application.forms import AddBook, AddAuthor, UpdateBook
 
 
 @app.route('/')
@@ -14,7 +14,7 @@ def add_book():
     form=AddBook()
     if request.method=="POST":
         name=form.add_book.data
-        book=Books(book_title=name)
+        book=Book(book_title=name)
         db.session.add(book)
         db.session.commit()
         return redirect(url_for('book_added'))
@@ -24,19 +24,26 @@ def add_book():
 def book_added():
     return render_template('book_added.html')
 
-@app.route('/view_books', methods=[])
+@app.route('/view_books', methods=['GET'])
 def view_books():
-    all_books=Books.query.all()
-    
-    return render_template('view_books.html')
+    all_books=Book.query.all()
+    return render_template('view_books.html', all_books=all_books)
 
 @app.route('/update_book')
-def update_book():
-    return render_template('/update_book.html')
+def update_book(bid):
+    # bid is the id in Books
+    form=UpdateBook()
+    if request.method=="POST":
+        b_name=form.b_name.data
+        book=Book.query.filter_by(id=bid).first()
+        book.book=b_name
+        db.session.commit()
+        return redirect(url_for('home'))
+    return render_template('update_book.html', form=form)
 
 @app.route('/delete_book')
 def delete_book():
-    return render_template('/delete_book.html')
+    return render_template('delete_book.html')
 
 
 
@@ -47,13 +54,17 @@ def delete_book():
 
 @app.route('/add_author', methods=['GET', 'POST'])
 def add_author():
-    #return redirect()
     form=AddAuthor()
+    books=Book.query.all()
+    for b in books:
+        form.book.choices.append((b.id, b.book_title))
     if request=="POST":
         first_name=form.first_name.data
         last_name=form.last_name.data
         author=AddAuthor(first_name, last_name)
-        db.session.add(author)
+        newbookauthor=Author(first=first_name, last=last_name, author=author)
+        db.session.add(newbookauthor)
         db.session.commit()
+        return redirect(url_for('add_author', bid=newbookauthor.id))
     return render_template('add_author.html', form=form)
 

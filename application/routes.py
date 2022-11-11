@@ -31,7 +31,6 @@ def view_books():
 
 @app.route('/update_book')
 def update_book(bid):
-    # bid is the id in Books
     form=UpdateBook()
     if request.method=="POST":
         b_name=form.b_name.data
@@ -55,16 +54,21 @@ def delete_book():
 @app.route('/add_author', methods=['GET', 'POST'])
 def add_author():
     form=AddAuthor()
-    books=Book.query.all()
-    for b in books:
-        form.book.choices.append((b.id, b.book_title))
-    if request=="POST":
+    if request.method=="POST":
         first_name=form.first_name.data
         last_name=form.last_name.data
-        author=AddAuthor(first_name, last_name)
-        newbookauthor=Author(first=first_name, last=last_name, author=author)
+        newbookauthor=Author(first_name=first_name, last_name=last_name)
         db.session.add(newbookauthor)
         db.session.commit()
-        return redirect(url_for('add_author', bid=newbookauthor.id))
+        return redirect(url_for('add_author'))
     return render_template('add_author.html', form=form)
 
+
+@app.route('/author_added', methods=['GET'])
+def author_added():
+    return render_template(url_for('author_added.html'))
+    
+@app.route('/view_author', methods=['GET'])
+def view_author():
+    all_authors=Author.query.all()
+    return render_template('view_author.html', all_authors=all_authors)

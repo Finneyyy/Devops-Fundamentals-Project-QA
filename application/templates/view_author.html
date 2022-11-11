@@ -1,0 +1,8 @@
+{% extends 'layout.html' %}
+{% block body%}
+<h2> See our list of authors below  </h2>
+<br>
+{% for a1 in all_authors %}
+<h4>{{ a1.first_name }} {{ a1.last_name }}</h4>
+{% endfor %}
+{% endblock body %}

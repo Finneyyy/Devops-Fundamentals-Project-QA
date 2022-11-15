@@ -53,7 +53,10 @@ def add_author():
     form=AddAuthor()
     bookandauthor=Book.query.all()
     for bAndA in bookandauthor:
-        form.book_author.choices.append((bAndA.id, bAndA.book_title))
+        book_choice_author=form.book_author.choices.append((bAndA.id, bAndA.book_title))
+        # for a in book_choice_author:
+        #     #.,lsza;'[[[[[[[[edwwwwwwwwwwwwww' -> Thank my cat for this
+        #     return a
     if request.method=="POST":
         first_name=form.first_name.data
         last_name=form.last_name.data
@@ -73,7 +76,7 @@ def view_author():
     all_authors=Author.query.all()
     return render_template('view_author.html', all_authors=all_authors)
 
-@app.route('/update_author/<int:aid>')
+@app.route('/update_author/<int:aid>', methods=['GET', 'POST'])
 def update_author(aid):
     form=UpdateAuthor()
     if request.method=="POST":
@@ -85,3 +88,10 @@ def update_author(aid):
         db.session.commit()
         return redirect(url_for('update_author'))
     return render_template('update_author.html', form=form)
+
+@app.route('/delete_author-<int:aid>')
+def delete_author(aid):
+    author=Author.query.filter_by(id=aid).first()
+    db.session.delete(author)
+    db.session.commit()
+    return redirect(url_for('view_author'))

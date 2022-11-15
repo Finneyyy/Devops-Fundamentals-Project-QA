@@ -1,8 +1,10 @@
 {% extends 'layout.html' %}
 {% block body%}
 <h2> See our list of authors below  </h2>
+<p> You can delete an author by typing in the url bar "/delete_author?id ", where id is the author id (1, 2, 3, etc.)</p>
 <br>
 {% for a1 in all_authors %}
-<p>{{ a1.first_name }} {{ a1.last_name }}    </p>   
+<h4></h4>
+<p>{{ a1.id }} {{ a1.first_name }} {{ a1.last_name }}  </p>   
 {% endfor %}
 {% endblock body %}

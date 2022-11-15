@@ -5,7 +5,7 @@
 <div class='form'>
     <form method='POST' action=''>
         {{ form.hidden_tag() }} <!-- csrf protection-->
-        {{ form.add_book.label }} {{ form.add_book }}
+        {{ form.book_name.label }} {{ form.book_name }}
         <br>
         {{ form.submit }}
     {{ message }}

@@ -1,0 +1,12 @@
+{% extends 'layout.html' %}
+{% block body%}
+<h2> Update existing book records </h2>
+<br>
+<div class='form'>
+    <form method='POST' action=''>
+        {{ form.hidden_tag() }} <!-- csrf protection-->
+        {{ form.book_name.label }} {{ form.book_name }}
+        <br>
+        {{ form.submit }}
+    {{ message }}
+{% endblock body %}

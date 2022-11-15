@@ -1,0 +1,14 @@
+{% extends 'layout.html' %}
+{% block body%}
+<h2> Add Books to our system </h2>
+<br>
+<div class='form'>
+    <form method='POST' action=''>
+        {{ form.hidden_tag() }} <!-- csrf protection-->
+        {{ form.book_name.label }} {{ form.book_name }}
+        <br>
+        {{ form.submit }}
+    {{ message }}
+    </form>
+</div>
+{% endblock body %}

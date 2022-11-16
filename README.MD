@@ -8,6 +8,7 @@
 4. [Version Control](#version-control)
 5. [Risk Assessment](#risk-assessment)
 6. [Testing](#testing)
+7. [The Application](#the-application)
 
 
 ## Project Brief:

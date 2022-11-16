@@ -1,5 +1,6 @@
 flask
 flask-sqlalchemy==2.5.1
+flask-testing
 flask-wtf
 wtforms
 pymysql

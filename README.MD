@@ -91,7 +91,7 @@ And they can delete it manually by editing the url bar.
 • I want to add in proper linkage so it's easier to update/delete books and authors.<br>
 
 ## Known issues
-• One can't see the authors beside the books they have written.
+• One can't see the authors beside the books they have written.<br>
 • The update functionality is mostly broken
 
 

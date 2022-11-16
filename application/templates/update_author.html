@@ -5,8 +5,8 @@
 <div class='form'>
     <form method='POST' action=''>
         {{ form.hidden_tag() }} <!-- csrf protection-->
-        {{ form.update_author_firstname.label }} {{ form.update_author_firstname }}
-        {{ form.update_author_lastname.label }} {{ form.update_author_lastname }}
+        {{ form.first_name.label }} {{ form.first_name }}
+        {{ form.last_name.label }} {{ form.last_name }}
         <br>
         {{ form.submit }}
     {{ message }}

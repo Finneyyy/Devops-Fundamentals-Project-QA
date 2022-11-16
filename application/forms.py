@@ -18,6 +18,6 @@ class UpdateBook(FlaskForm):
     submit=SubmitField("Update Book")
     
 class UpdateAuthor(FlaskForm):
-    update_author_firstname=StringField("First Name", validators=[DataRequired(message="This field can't be blank")])
-    update_author_lastname=StringField("Last Name", validators=[DataRequired(message="This field can't be blank")])
+    first_name=StringField("First Name", validators=[DataRequired(message="This field can't be blank")])
+    last_name=StringField("Last Name", validators=[DataRequired(message="This field can't be blank")])
     submit=SubmitField("Update Author")

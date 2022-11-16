@@ -29,16 +29,16 @@ def view_books():
     all_books=Book.query.all()
     return render_template('view_books.html', all_books=all_books)
 
-# @app.route('/update_book/<>', methods=['GET'])
-# def update_book():
-#     form=UpdateBook()    
-#     if request.method=="POST":
-#         book_name=form.book_name.data
-#         book=Book.query.filter_by(id=bid).first()
-#         book.book=book_name
-#         db.session.commit()
-#         return redirect(url_for('update_book', bid=book.book))
-#     return render_template('update_book.html', form=form)
+@app.route('/update_book/<int:bid>', methods=['GET'])
+def update_book(bid):
+    form=UpdateBook()    
+    if request.method=="POST":
+        book_name=form.book_name.data
+        book=Book.query.filter_by(id=bid).first()
+        book.book=book_name
+        db.session.commit()
+        return redirect(url_for('update_book', bid=book.book))
+    return render_template('update_book.html', form=form)
 
 
 
@@ -80,13 +80,13 @@ def view_author():
 def update_author(aid):
     form=UpdateAuthor()
     if request.method=="POST":
-        author_firstname=form.update_author_firstname.data
-        author_lastname=form.update_author_lastname.data
+        author_firstname=form.first_name.data
+        author_lastname=form.last_name.data
         author=Author.query.filter_by(id=aid).first()
         author.authorf=author_firstname
         author.authorl=author_lastname
         db.session.commit()
-        return redirect(url_for('update_author'))
+        return redirect(url_for('update_author', aid=aid))
     return render_template('update_author.html', form=form)
 
 @app.route('/delete_author-<int:aid>')

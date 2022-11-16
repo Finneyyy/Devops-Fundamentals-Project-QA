@@ -3,8 +3,6 @@
 <h2> See our list of books below  </h2>
 <br>
 {% for book in all_books %}
-{% for author in all_authors %}
 <p>{{ book.book_title }}</p>
-{% endfor %}
 {% endfor %}
 {% endblock body %}

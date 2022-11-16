@@ -49,6 +49,7 @@ This Library Application allows the user to create, read, update and delete book
 I used Git for version control and hosted the project repo on Github. I used seperate branches whilst creating this project. I worked on a development branch named 'dev', and used seperate feature branches when adding new functionality (these branches were deleted on merges with dev branch) When I achieved the MVP, I merged the development branch with the main branch.
 
 ## Risk Assessment
+A risk assessment was made to examine risks related to the project, including its requirements and its demands. Due to the detail of my risk assessment, I have opted to include it in my repo as a file, and it can be accessed [here](https://github.com/Finneyyy/Devops-Fundamentals-Project-QA/blob/main/docs/library-app-ra.xlsx).
 
 ## Testing
 Currently, unit testing has been implemented. This tests functions in the application (it tests the create, read, update and delete functionalities). Coverage is currently at 97%.
@@ -79,6 +80,9 @@ If they want to update an author, the user can update it manually by editing the
 
 ![Update Authors](https://github.com/Finneyyy/Devops-Fundamentals-Project-QA/blob/main/docs/update%20author.PNG)
 
+And they can delete it manually by editing the url bar.
+![Delete Author](https://github.com/Finneyyy/Devops-Fundamentals-Project-QA/blob/main/docs/delete%20author%20(part%201).PNG)
+
 
 ## Future Work
 • Add more tables relating to Books, ie: "Categories".<br>
@@ -87,7 +91,7 @@ If they want to update an author, the user can update it manually by editing the
 
 ## Known issues
 • One can't see the authors beside the books they have written.
-
+• The update functionality is mostly broken
 
 
 

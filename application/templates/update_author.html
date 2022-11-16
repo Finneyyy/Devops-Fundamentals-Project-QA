@@ -1,13 +1,12 @@
 {% extends 'layout.html' %}
 {% block body%}
-<h2> Add Authors to our system </h2>
+<h2> Update Authors </h2>
 <br>
 <div class='form'>
     <form method='POST' action=''>
         {{ form.hidden_tag() }} <!-- csrf protection-->
-        {{ form.first_name.label }} {{ form.first_name }}
-        {{ form.last_name.label }} {{ form.last_name }}
-        {{ form.book_author.label }} {{ form.book_author }}
+        {{ form.update_author_firstname.label }} {{ form.update_author_firstname }}
+        {{ form.update_author_lastname.label }} {{ form.update_author_lastname }}
         <br>
         {{ form.submit }}
     {{ message }}

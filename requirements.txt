@@ -5,3 +5,4 @@ flask-wtf
 wheel
 wtforms
 pymysql
+pytest

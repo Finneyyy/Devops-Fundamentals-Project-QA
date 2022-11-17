@@ -6,3 +6,4 @@ wheel
 wtforms
 pymysql
 pytest
+pytest-cov

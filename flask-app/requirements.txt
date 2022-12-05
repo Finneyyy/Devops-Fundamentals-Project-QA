@@ -2,5 +2,8 @@ flask
 flask-sqlalchemy==2.5.1
 flask-testing
 flask-wtf
+wheel
 wtforms
 pymysql
+pytest
+pytest-cov
